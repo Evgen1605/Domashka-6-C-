@@ -5,19 +5,26 @@
 Console.Clear();
 
 Console.Write("Введите b1: ");
-double b1 = Convert.ToDouble(Console.ReadLine()!);
+double b1 = double.Parse(Console.ReadLine()!);
 Console.Write("Введите k1: ");
-double k1 = Convert.ToDouble(Console.ReadLine()!);
+double k1 = double.Parse(Console.ReadLine()!);
 Console.Write("Введите b2: ");
-double b2 = Convert.ToDouble(Console.ReadLine()!);
+double b2 = double.Parse(Console.ReadLine()!);
 Console.Write("Введите k2: ");
-double k2 = Convert.ToDouble(Console.ReadLine()!);
+double k2 = double.Parse(Console.ReadLine()!);
 
 
-double x = -(b1 - b2) / (k1 - k2);
-double y = k1 * x + b1;
+// double x = (b1 - b2) / (k1 - k2);
+// double y = k1 * x + b1;
 
-// x = Math.Round(x, 3);
-// y = Math.Round(y, 3);
+double[] GetPoint(double inB1, double inK1, double inB2, double inK2)
+{
+  double[] result = new double[2];
+  result[0] = (inB2 - inB1) / (inK1 - inK2);
+  result[1] = inK1 * result[0] + inB1;
+  return result;
+}
 
-Console.WriteLine($"Пересечение в точке: ({x:f2}; {y:f2})");
+Console.WriteLine(String.Join(" ", GetPoint(b1, k1, b2, k2)));
+
+// Console.WriteLine($"Пересечение в точке: ({x:f2}; {y:f2})");
