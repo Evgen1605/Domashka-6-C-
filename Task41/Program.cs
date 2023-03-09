@@ -15,14 +15,14 @@ Console.WriteLine($"Кол-во элементов больше 0: {ArrNum(arr)}
 
 int ArrNum(int[] array)
 {
-  int count = 0;
-  for (int i = 0; i < array.Length; i++)
+  int count = 0;// счётчик а 0
+  for (int i = 0; i < array.Length; i++)// циклом проходим по всему массиву
   {
-    if (array[i] > 0)
+    if (array[i] > 0)// проверяем если элемент больше 0 
     {
-      count++;
+      count++;// то счётчик увеличиваем на 1
     }
   }
-  return count;
+  return count;// по завершении цикла выводим счётчик
 }
 

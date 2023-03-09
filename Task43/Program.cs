@@ -17,12 +17,12 @@ double k2 = double.Parse(Console.ReadLine()!);
 // double x = (b1 - b2) / (k1 - k2);
 // double y = k1 * x + b1;
 
-double[] GetPoint(double inB1, double inK1, double inB2, double inK2)
+double[] GetPoint(double inB1, double inK1, double inB2, double inK2)// создаём функцию, которая возвращает  массив вещественных чисел, а на вход принимает вещественные числа
 {
-  double[] result = new double[2];
-  result[0] = (inB2 - inB1) / (inK1 - inK2);
-  result[1] = inK1 * result[0] + inB1;
-  return result;
+  double[] result = new double[2];// создали массив вещественных чисел на 2 элемента (double[2])
+  result[0] = (inB2 - inB1) / (inK1 - inK2);// в 0 индекс массива (X) положили действие формулы
+  result[1] = inK1 * result[0] + inB1;// в первый индекс ассива (Y) так же положили действие формулы 
+  return result;// выводим результат
 }
 
 Console.WriteLine(String.Join(" ", GetPoint(b1, k1, b2, k2)));
